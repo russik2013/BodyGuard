@@ -12,8 +12,8 @@
                         @foreach($events as $event)
 
                             <article class="entry featured-posts-grid__entry">
-                                <div class="thumb-bg-holder owl-lazy" data-src="../images/news/{{$event->image}}">
-                                    <img src="../images/news/{{$event->image}}" alt="" class="d-none">
+                                <div class="thumb-bg-holder owl-lazy" data-src="../{{$event->image}}">
+                                    <img src="../{{$event->image}}" alt="" class="d-none">
                                     <a href="{{url('news/'.$event->id)}}" class="thumb-url"></a>
                                     <div class="bottom-gradient"></div>
                                 </div>
@@ -122,7 +122,7 @@
                                 <div class="entry__img-holder post-list__img-holder">
                                     <a href="{{url('news/'.$new->id)}}">
                                         <div class="thumb-container thumb-75">
-                                            <img data-src="../images/news/{{$new->image}}" src="{{url('img/news/'.$new->image)}}" class="entry__img lazyload" alt="">
+                                            <img data-src="../{{$new->image}}" src="{{url('../'.$new->image)}}" class="entry__img lazyload" alt="">
                                         </div>
                                     </a>
                                 </div>

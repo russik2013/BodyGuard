@@ -12,8 +12,8 @@ class CallBackController extends Controller
         Mail::send('smallMail', ["user" => $request], function ($message) use ($request) {
 
 
-            $message->from('us@example.com', 'Laravel');
-            $message->to('z.kon2009@gmail.com', 'Drugak')->subject('Welcome to Odessa');
+            $message->from('us@example.com', 'Bodyguards mail');
+            $message->to('office@bodyguards.od.ua', 'Drugak')->subject('Новое сообщение с этого сайта');
             // $message->to('z.kon2009@gmail.com','Drugak')->subject('Welcome to Odessa');
         });
 

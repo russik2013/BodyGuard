@@ -22,7 +22,7 @@
                         </div>
 
                         <div class="entry__img-holder">
-                            <img src="../images/news/{{$news->image}}" alt="" class="entry__img">
+                            <img src="{{url('../'.$news->image)}}" alt="" class="entry__img">
                         </div>
 
                         <div class="entry__article">

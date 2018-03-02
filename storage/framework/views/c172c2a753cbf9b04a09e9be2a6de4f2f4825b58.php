@@ -11,8 +11,8 @@
                         <?php $__currentLoopData = $events; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $event): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 
                             <article class="entry featured-posts-grid__entry">
-                                <div class="thumb-bg-holder owl-lazy" data-src="../images/news/<?php echo e($event->image); ?>">
-                                    <img src="../images/news/<?php echo e($event->image); ?>" alt="" class="d-none">
+                                <div class="thumb-bg-holder owl-lazy" data-src="../<?php echo e($event->image); ?>">
+                                    <img src="../<?php echo e($event->image); ?>" alt="" class="d-none">
                                     <a href="<?php echo e(url('news/'.$event->id)); ?>" class="thumb-url"></a>
                                     <div class="bottom-gradient"></div>
                                 </div>
@@ -121,7 +121,7 @@
                                 <div class="entry__img-holder post-list__img-holder">
                                     <a href="<?php echo e(url('news/'.$new->id)); ?>">
                                         <div class="thumb-container thumb-75">
-                                            <img data-src="../images/news/<?php echo e($new->image); ?>" src="<?php echo e(url('img/news/'.$new->image)); ?>" class="entry__img lazyload" alt="">
+                                            <img data-src="../<?php echo e($new->image); ?>" src="<?php echo e(url('../'.$new->image)); ?>" class="entry__img lazyload" alt="">
                                         </div>
                                     </a>
                                 </div>

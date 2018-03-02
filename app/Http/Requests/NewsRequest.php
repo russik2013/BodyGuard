@@ -26,7 +26,7 @@ class NewsRequest extends FormRequest
         return [
             'name' => "required|string|min:4",
             'description' => "required|string|min:4",
-            'image' => "sometimes|image",
+            //'image' => "sometimes|image",
             'video' => "sometimes|url",
             'newsDate' => 'date_format:"Y-m-d H:i"|required',
             'event' => "required|in:0,1",

@@ -1,7 +1,9 @@
-Вам сообщение от {{$user -> name}} :
+Вам сообщение от {{$user -> name}}:
 <br/>
-{{$user -> text}}
-<br/>
+ {{$user -> text}}
+<br/><br/>
 Контактная информация отправителя
-<p> Телефон {{$user -> phone}}</p>
-<p> Почта {{$user -> email}} </p>
+<br/>
+Телефон {{$user -> phone}}
+<br/>
+Почта {{$user -> email}}

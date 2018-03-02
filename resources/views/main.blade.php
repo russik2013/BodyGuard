@@ -60,19 +60,19 @@
                     <!-- Nav-wrap -->
                     <nav class="flex-child nav__wrap d-none d-lg-block">
                         <ul class="nav__menu">
-                            <li class="active">
+                            <li @if(Request::route()->getName() == "home") class="active" @endif>
                                 <a href="{{url('/')}}">Новости</a>
                             </li>
 
-                            <li class="nav__dropdown">
+                            <li class="nav__dropdown @if(Request::route()->getName() == "about") active @endif" >
                                 <a href="{{url('/about')}}">О федерации</a>
                             </li>
 
-                            <li >
+                            <li @if(Request::route()->getName() == "training") class="active" @endif>
                                 <a href="{{url("/training/")}}">Тренировка</a>
                             </li>
 
-                            <li class="nav__dropdown">
+                            <li class="nav__dropdown @if(Request::route()->getName() == "callback") active @endif">
                                 <a href="{{url("/callback")}}">Связаться с нами</a>
                             </li>
                         </ul> <!-- end menu -->

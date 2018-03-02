@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', "HomeController@index");
+Route::get('/', "HomeController@index")->name('home');
 
 Route::group(['prefix' => 'news'], function () {
 
@@ -22,17 +22,17 @@ Route::group(['prefix' => 'news'], function () {
     Route::post('events', "NewsController@events");
 
 });
-Route::get('callback', "CallBackController@callbackForm");
+Route::get('callback', "CallBackController@callbackForm")->name('callback');
 Route::post('callback', "CallBackController@callback");
 
 Route::get('about', function (){
 
     return view('about');
 
-});
+}) -> name('about');
 
 Route::get('training', function (){
 
     return view('training');
 
-});
+})->name('training');

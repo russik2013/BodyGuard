@@ -36,7 +36,7 @@
                         <div class="post-list-small__img-holder">
                             <div class="thumb-container thumb-75">
                                 <a href="{{url('news/'.$new->id)}}">
-                                    <img data-src="../images/news/{{$new->image}}" src="../images/news/{{$new->image}}" alt="" class=" lazyload">
+                                    <img data-src="{{url('../'.$new->image)}}" src="{{url('../'.$new->image)}}" alt="" class=" lazyload">
                                 </a>
                             </div>
                         </div>

@@ -23,6 +23,14 @@ class NewsController extends Controller
 
         $news -> fill($request -> all());
 
+        $checkVideo = explode('https://youtu.be/',$request -> video);
+
+        if(isset($checkVideo[1])){
+
+            $news -> video = "https://www.youtube.com/embed/".$checkVideo[1];
+
+        }
+
         if($request->image) {
 
             $request->image->move('../images/news', "news_" . Carbon::now() . '.png');
@@ -46,11 +54,20 @@ class NewsController extends Controller
 
             if($request->image) {
 
-                File::delete('../images/news/'.$news -> image);
+                if(file_exists('../'.$news -> image))
+                File::delete('../'.$news -> image);
 
                 $request->image->move('../images/news', "news_" . Carbon::now() . '.png');
 
                 $news->image = "images/news/news_" . Carbon::now() . '.png';
+            }
+
+            $checkVideo = explode('https://youtu.be/',$request -> video);
+
+            if(isset($checkVideo[1])){
+
+                $news -> video = "https://www.youtube.com/embed/".$checkVideo[1];
+
             }
 
             $news -> save();
@@ -66,8 +83,8 @@ class NewsController extends Controller
         $news = News::find($request -> id);
 
         if($news){
-
-            File::delete('../images/news/'.$news -> image);
+            if(file_exists('../'.$news -> image))
+            File::delete('../'.$news -> image);
 
             $news -> delete();
 
@@ -99,6 +116,10 @@ class NewsController extends Controller
         $news = News::find($id);
 
         if($news){
+
+            $news -> showCount += 1;
+
+            $news -> save();
 
             return view('post',compact('news'));
 

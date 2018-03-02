@@ -36,7 +36,7 @@
                         <div class="post-list-small__img-holder">
                             <div class="thumb-container thumb-75">
                                 <a href="<?php echo e(url('news/'.$new->id)); ?>">
-                                    <img data-src="../images/news/<?php echo e($new->image); ?>" src="../images/news/<?php echo e($new->image); ?>" alt="" class=" lazyload">
+                                    <img data-src="<?php echo e(url('../'.$new->image)); ?>" src="<?php echo e(url('../'.$new->image)); ?>" alt="" class=" lazyload">
                                 </a>
                             </div>
                         </div>
